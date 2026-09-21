@@ -1,0 +1,71 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/tokens' as *;
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 6% 0%, rgb(194 77 52 / 6%), transparent 26rem),
+    var(--paper);
+  color: var(--ink);
+  font-family: $font-body;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.modal-is-open {
+  overflow: hidden;
+}
+
+.container {
+  @include container;
+}
+
+.eyebrow {
+  @include eyebrow;
+}
+
+.section-title {
+  @include display-type(clamp(40px, 4.2vw, 62px));
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 20;
+  padding: 10px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateY(-160%);
+
+  &:focus {
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

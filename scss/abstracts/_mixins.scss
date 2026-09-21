@@ -1,0 +1,28 @@
+@use 'tokens' as *;
+
+@mixin container {
+  width: min($page-max-width, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+@mixin eyebrow {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font: 500 11px / 1.2 $font-mono;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+}
+
+@mixin display-type($size) {
+  margin: 0;
+  font: 600 #{$size} / 0.98 $font-display;
+  letter-spacing: -0.055em;
+}
+
+@mixin interactive-lift {
+  transition: transform 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease, color 0.24s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
