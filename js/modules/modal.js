@@ -16,7 +16,10 @@ export function initRouteModal() {
     distance: dialog.querySelector('[data-modal-distance]'),
     season: dialog.querySelector('[data-modal-season]'),
     highlights: dialog.querySelector('[data-modal-highlights]'),
+    places: dialog.querySelector('[data-modal-places]'),
     map: dialog.querySelector('[data-modal-map]'),
+    mapFrame: dialog.querySelector('[data-modal-map-frame]'),
+    route: dialog.querySelector('[data-modal-route]'),
   };
 
   function showRoute(route) {
@@ -35,7 +38,27 @@ export function initRouteModal() {
         return item;
       }),
     );
-    elements.map.href = route.map;
+    elements.places.replaceChildren(
+      ...route.places.map((place) => {
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        const name = document.createElement('strong');
+        const type = document.createElement('span');
+
+        link.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.query)}`;
+        link.target = '_blank';
+        link.rel = 'noreferrer';
+        name.textContent = place.name;
+        type.textContent = place.type;
+        link.append(name, type);
+        item.append(link);
+        return item;
+      }),
+    );
+    elements.map.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(route.mapQuery)}`;
+    elements.mapFrame.src = `https://www.google.com/maps?q=${encodeURIComponent(route.mapQuery)}&output=embed`;
+    elements.mapFrame.title = `Карта: ${route.title}`;
+    elements.route.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(route.mapQuery)}&waypoints=${encodeURIComponent(route.places.slice(1).map((place) => place.query).join('|'))}`;
     dialog.showModal();
   }
 

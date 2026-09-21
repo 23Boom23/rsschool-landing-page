@@ -8,8 +8,13 @@ export const routes = {
     season: 'красавік–кастрычнік',
     image: 'assets/images/mir-castle.jpg',
     imageAlt: 'Мірскі замак над сажалкай',
-    map: 'https://www.openstreetmap.org/search?query=Mir%20Castle%20Belarus',
     highlights: ['вежы і галерэі замка', 'прагулка вакол сажалкі', 'кава ў мястэчку Мір'],
+    mapQuery: 'Mir Castle, Belarus',
+    places: [
+      { name: 'Мірскі замак', type: 'замак', query: 'Mir Castle, Belarus' },
+      { name: 'Сажалка', type: 'від', query: 'Mir Castle pond, Belarus' },
+      { name: 'Касцёл Св. Мікалая', type: 'архітэктура', query: 'St Nicholas Church, Mir, Belarus' },
+    ],
   },
   nesvizh: {
     kicker: 'Мінская вобласць · 1 дзень',
@@ -20,8 +25,13 @@ export const routes = {
     season: 'май–кастрычнік',
     image: 'assets/images/nesvizh-castle.jpg',
     imageAlt: 'Нясвіжскі замак і вада перад фасадам',
-    map: 'https://www.openstreetmap.org/search?query=Nesvizh%20Castle%20Belarus',
     highlights: ['палац і яго ўнутраныя дворыкі', 'доўгія алеі парку', 'ратуша і старая плошча'],
+    mapQuery: 'Nesvizh Castle, Belarus',
+    places: [
+      { name: 'Нясвіжскі замак', type: 'палац', query: 'Nesvizh Castle, Belarus' },
+      { name: 'Ратуша', type: 'гісторыя', query: 'Nesvizh Town Hall, Belarus' },
+      { name: 'Фарны касцёл', type: 'архітэктура', query: 'Corpus Christi Church, Nesvizh, Belarus' },
+    ],
   },
   puscha: {
     kicker: 'Брэсцкая вобласць · 2 дні',
@@ -32,8 +42,13 @@ export const routes = {
     season: 'май–верасень',
     image: 'assets/images/belovezhskaya-pushcha.jpg',
     imageAlt: 'Сонечная паляна ў Белавежскай пушчы',
-    map: 'https://www.openstreetmap.org/search?query=Belovezhskaya%20Pushcha%20Belarus',
     highlights: ['веламаршруты ў лесе', 'вольерны комплекс', 'раніца ў цішыні пушчы'],
+    mapQuery: 'Belovezhskaya Pushcha National Park, Belarus',
+    places: [
+      { name: 'Белавежская пушча', type: 'нацпарк', query: 'Belovezhskaya Pushcha National Park, Belarus' },
+      { name: 'Музей прыроды', type: 'музей', query: 'Museum of Nature Belovezhskaya Pushcha, Belarus' },
+      { name: 'Вольеры', type: 'прырода', query: 'Belovezhskaya Pushcha enclosures, Belarus' },
+    ],
   },
   braslav: {
     kicker: 'Віцебская вобласць · 2 дні',
@@ -44,8 +59,13 @@ export const routes = {
     season: 'чэрвень–верасень',
     image: 'assets/images/braslav-lakes.jpg',
     imageAlt: 'Від на Браслаўскія азёры з гары Маяк',
-    map: 'https://www.openstreetmap.org/search?query=Braslav%20Lakes%20Belarus',
     highlights: ['аглядная пляцоўка Маяк', 'вечар на беразе возера', 'маленькія вёскі па дарозе'],
+    mapQuery: 'Mayak Mountain, Braslav, Belarus',
+    places: [
+      { name: 'Гара Маяк', type: 'від', query: 'Mayak Mountain, Braslav, Belarus' },
+      { name: 'Возера Дрывяты', type: 'возера', query: 'Lake Drivyaty, Braslav, Belarus' },
+      { name: 'Слабодка', type: 'вёска', query: 'Slobodka, Braslav, Belarus' },
+    ],
   },
   lida: {
     kicker: 'Гродзенская вобласць · 1 дзень',
@@ -56,8 +76,13 @@ export const routes = {
     season: 'увесь год',
     image: 'assets/images/lida-castle.jpg',
     imageAlt: 'Лідскі замак у сонечны дзень',
-    map: 'https://www.openstreetmap.org/search?query=Lida%20Castle%20Belarus',
     highlights: ['двор і сцены замка', 'пешаходная вуліца', 'прыпынак на абед у цэнтры'],
+    mapQuery: 'Lida Castle, Belarus',
+    places: [
+      { name: 'Лідскі замак', type: 'замак', query: 'Lida Castle, Belarus' },
+      { name: 'Кафедральны сабор', type: 'архітэктура', query: 'St Michael Cathedral, Lida, Belarus' },
+      { name: 'Цэнтр Ліды', type: 'прагулка', query: 'Lida city centre, Belarus' },
+    ],
   },
   brest: {
     kicker: 'Брэсцкая вобласць · 1 дзень',
@@ -68,8 +93,13 @@ export const routes = {
     season: 'сакавік–кастрычнік',
     image: 'assets/images/brest-fortress.jpg',
     imageAlt: 'Цытадэль Брэсцкай крэпасці',
-    map: 'https://www.openstreetmap.org/search?query=Brest%20Fortress%20Belarus',
     highlights: ['тэрыторыя цытадэлі', 'набярэжная Мухаўца', 'вячэрняя Савецкая вуліца'],
+    mapQuery: 'Brest Fortress, Belarus',
+    places: [
+      { name: 'Брэсцкая крэпасць', type: 'мемарыял', query: 'Brest Fortress, Belarus' },
+      { name: 'Холмскія вароты', type: 'гісторыя', query: 'Kholm Gate Brest Fortress, Belarus' },
+      { name: 'Савецкая вуліца', type: 'вечар', query: 'Sovetskaya Street, Brest, Belarus' },
+    ],
   },
   grodno: {
     kicker: 'Гродзенская вобласць · выходныя',
@@ -80,8 +110,13 @@ export const routes = {
     season: 'май–кастрычнік',
     image: 'assets/images/grodno-central-square.jpg',
     imageAlt: 'Вуліца ў гістарычным цэнтры Гродна',
-    map: 'https://www.openstreetmap.org/search?query=Grodno%20Belarus',
     highlights: ['Стары і Новы замкі', 'вежы Фарнага касцёла', 'спуск да Нёмана'],
+    mapQuery: 'Old Castle, Grodno, Belarus',
+    places: [
+      { name: 'Стары замак', type: 'замак', query: 'Old Castle, Grodno, Belarus' },
+      { name: 'Фарны касцёл', type: 'архітэктура', query: 'Farny Church, Grodno, Belarus' },
+      { name: 'Нёман', type: 'набярэжная', query: 'Neman River embankment, Grodno, Belarus' },
+    ],
   },
   pripyat: {
     kicker: 'Гомельская вобласць · 2 дні',
@@ -92,8 +127,13 @@ export const routes = {
     season: 'май–жнівень',
     image: 'assets/images/pripyat-river.jpg',
     imageAlt: 'Рака Прыпяць каля Мазыра',
-    map: 'https://www.openstreetmap.org/search?query=Pripyat%20National%20Park%20Belarus',
     highlights: ['ранні выхад на ваду', 'назіранне за птушкамі', 'вечар на беразе Прыпяці'],
+    mapQuery: 'Pripyat River, Mazyr, Belarus',
+    places: [
+      { name: 'Прыпяць', type: 'рака', query: 'Pripyat River, Mazyr, Belarus' },
+      { name: 'Замкавая гара', type: 'від', query: 'Castle Hill, Mazyr, Belarus' },
+      { name: 'Нацпарк Прыпяцкі', type: 'прырода', query: 'Pripyat National Park, Belarus' },
+    ],
   },
   zhilichi: {
     kicker: 'Магілёўская вобласць · 1 дзень',
@@ -104,8 +144,13 @@ export const routes = {
     season: 'май–кастрычнік',
     image: 'assets/images/zhilichi-palace.jpg',
     imageAlt: 'Двор Жыліцкага палаца',
-    map: 'https://www.openstreetmap.org/search?query=Zhilichi%20Palace%20Belarus',
     highlights: ['палацавыя інтэр’еры', 'стары парк', 'ціхая вандроўка без натоўпу'],
+    mapQuery: 'Zhilichi Palace, Belarus',
+    places: [
+      { name: 'Жыліцкі палац', type: 'палац', query: 'Zhilichi Palace, Belarus' },
+      { name: 'Палацавы парк', type: 'парк', query: 'Zhilichi Palace park, Belarus' },
+      { name: 'Кіраўск', type: 'горад', query: 'Kirovsk, Mogilev Region, Belarus' },
+    ],
   },
   vitebsk: {
     kicker: 'Віцебская вобласць · выходныя',
@@ -116,7 +161,12 @@ export const routes = {
     season: 'май–верасень',
     image: 'assets/images/vitebsk-city.jpg',
     imageAlt: 'Цэнтр Віцебска',
-    map: 'https://www.openstreetmap.org/search?query=Vitebsk%20Belarus',
     highlights: ['вуліца Суворава', 'бераг Заходняй Дзвіны', 'мастацкая майстэрня або галерэя'],
+    mapQuery: 'Vitebsk City Hall, Belarus',
+    places: [
+      { name: 'Ратуша', type: 'гісторыя', query: 'Vitebsk City Hall, Belarus' },
+      { name: 'Дом-музей Шагала', type: 'мастацтва', query: 'Marc Chagall House Museum, Vitebsk, Belarus' },
+      { name: 'Успенскі сабор', type: 'архітэктура', query: 'Assumption Cathedral, Vitebsk, Belarus' },
+    ],
   },
 };

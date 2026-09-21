@@ -222,7 +222,36 @@
   }
 
   .hero-visual {
-    height: 248px;
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+
+    &::after {
+      background:
+        linear-gradient(90deg, var(--paper) 0%, transparent 22%),
+        linear-gradient(0deg, rgb(25 55 46 / 55%), transparent 65%);
+    }
+  }
+
+  .hero {
+    min-height: 0;
+  }
+
+  .hero-content {
+    padding-bottom: 38px;
+  }
+
+  .hero-stats {
+    position: static;
+    margin-top: 48px;
+  }
+
+  .hero-visual__image {
+    object-fit: contain;
+    animation: none;
+    transform: none;
   }
 
   .hero-visual__caption {

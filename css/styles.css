@@ -497,6 +497,7 @@ body.modal-is-open {
   background: var(--paper);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
   color: var(--ink);
+  overflow-y: auto;
 }
 .route-modal::backdrop {
   background: rgba(18, 13, 10, 0.7);
@@ -598,9 +599,69 @@ body.modal-is-open {
   content: "✦";
 }
 
+.route-modal__places {
+  margin-bottom: 24px;
+}
+.route-modal__places h3 {
+  margin: 0 0 11px;
+  font: 500 10px/1.2 "DM Mono", monospace;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+.route-modal__places ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.route-modal__places a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.2;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.route-modal__places a:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+.route-modal__places a span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.route-modal__map-wrap {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+
+.route-modal__map {
+  display: block;
+  width: 100%;
+  height: 172px;
+  border: 0;
+}
+
+.route-modal__map-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 17px;
+}
+
 .route-modal__map-link {
-  margin-top: auto;
   color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.route-modal__route-link {
+  color: var(--ink);
   font-size: 14px;
   font-weight: 700;
 }
@@ -825,7 +886,29 @@ body.modal-is-open {
     font-size: 10px;
   }
   .hero-visual {
-    height: 248px;
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/10;
+  }
+  .hero-visual::after {
+    background: linear-gradient(90deg, var(--paper) 0%, transparent 22%), linear-gradient(0deg, rgba(25, 55, 46, 0.55), transparent 65%);
+  }
+  .hero {
+    min-height: 0;
+  }
+  .hero-content {
+    padding-bottom: 38px;
+  }
+  .hero-stats {
+    position: static;
+    margin-top: 48px;
+  }
+  .hero-visual__image {
+    object-fit: contain;
+    animation: none;
+    transform: none;
   }
   .hero-visual__caption {
     right: 7%;
