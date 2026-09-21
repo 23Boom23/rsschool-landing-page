@@ -11,4 +11,11 @@
 - `index.html` — главная страница;
 - `catalog.html` — каталог маршрутов.
 
+## Проверка
+
+- Деплой: https://23boom23.github.io/rsschool-landing-page/
+- Каталог: https://23boom23.github.io/rsschool-landing-page/catalog.html
+- Разметка обеих страниц проверена W3C Validator без ошибок.
+- Адаптивность проверена на ширине 1440px, 768px и 380px.
+
 Проект написан на семантических HTML, CSS и чистом JavaScript, без фреймворков и сборки. Для локального просмотра достаточно открыть `index.html` в актуальной версии Google Chrome.
