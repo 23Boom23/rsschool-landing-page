@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Каталог маршрутаў Вандроўя па Беларусі.">
-    <meta name="theme-color" content="#412d26">
+    <meta name="theme-color" content="#201714">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Каталог маршрутаў — Вандроўе</title>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Да асноўнага зместу</a>
+
     <header class="site-header">
       <div class="container header-content">
         <a class="logo" href="index.html" aria-label="Вандроўе, галоўная старонка">
@@ -44,22 +49,22 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="catalog-hero" aria-labelledby="catalog-hero-title">
         <div class="container">
           <p class="eyebrow">Мапа адкрыццяў</p>
           <h1 id="catalog-hero-title">Месцы, куды<br><em>вяртаюцца думкамі.</em></h1>
-          <p>Замкі, лясы, азёры і гарады — выберы сваю наступную гісторыю.</p>
+          <p>Націсні на картку, каб адкрыць гісторыю маршруту, яго тэмп і важныя прыпынкі.</p>
         </div>
       </section>
 
       <section class="catalog section" aria-labelledby="catalog-title">
         <div class="container">
-          <div class="catalog-top">
-            <h2 id="catalog-title">Усе маршруты</h2>
+          <div class="catalog-top reveal">
+            <h2 class="section-title" id="catalog-title">Усе маршруты</h2>
             <p>10 мясцін · 6 абласцей</p>
           </div>
-          <div class="category-tabs" role="group" aria-label="Катэгорыі маршрутаў">
+          <div class="category-tabs reveal" role="group" aria-label="Катэгорыі маршрутаў">
             <button class="active" type="button" aria-pressed="true" data-category="all">Усе</button>
             <button type="button" aria-pressed="false" data-category="weekend">На выходныя</button>
             <button type="button" aria-pressed="false" data-category="castles">Замкі</button>
@@ -67,54 +72,143 @@
             <button type="button" aria-pressed="false" data-category="cities">Гарады</button>
           </div>
 
-          <div class="catalog-grid">
+          <div class="catalog-grid reveal">
             <article class="catalog-card" data-categories="weekend castles">
-              <img src="assets/mir.svg" alt="Гравюрная ілюстрацыя Мірскага замка">
-              <div><p class="card-kicker">Мінская вобласць · 1 дзень</p><h3>Мірскі замак</h3><p class="card-description">Цагляныя вежы, вал і вада вакол адной з самых пазнавальных рэзідэнцый краіны.</p><span class="card-meta">12 км пешшу</span></div>
+              <img class="catalog-card__image" src="assets/images/mir-castle.jpg" alt="Мірскі замак над сажалкай">
+              <div class="catalog-card__content">
+                <p class="card-kicker">Мінская вобласць · 1 дзень</p>
+                <h3>Мірскі замак</h3>
+                <p class="card-description">Цагляныя вежы, вал і вада вакол адной з самых пазнавальных рэзідэнцый краіны.</p>
+                <div class="card-footer"><span class="card-meta">12 км пешшу</span><span class="card-open-label">Адкрыць ↗</span></div>
+              </div>
+              <button class="catalog-card__trigger" type="button" data-route-id="mir" aria-label="Адкрыць маршрут Мірскі замак"></button>
             </article>
+
             <article class="catalog-card" data-categories="weekend castles">
-              <img src="assets/nesvizh.svg" alt="Гравюрная ілюстрацыя Нясвіжскага палаца">
-              <div><p class="card-kicker">Мінская вобласць · 1 дзень</p><h3>Нясвіж і парк Радзівілаў</h3><p class="card-description">Палацавы парк, старыя алеі і павольны маршрут па гістарычным цэнтры.</p><span class="card-meta">8 км пешшу</span></div>
+              <img class="catalog-card__image" src="assets/images/nesvizh-castle.jpg" alt="Нясвіжскі замак і вада перад фасадам">
+              <div class="catalog-card__content">
+                <p class="card-kicker">Мінская вобласць · 1 дзень</p>
+                <h3>Нясвіж і парк Радзівілаў</h3>
+                <p class="card-description">Палацавы парк, старыя алеі і павольны маршрут па гістарычным цэнтры.</p>
+                <div class="card-footer"><span class="card-meta">8 км пешшу</span><span class="card-open-label">Адкрыць ↗</span></div>
+              </div>
+              <button class="catalog-card__trigger" type="button" data-route-id="nesvizh" aria-label="Адкрыць маршрут Нясвіж і парк Радзівілаў"></button>
             </article>
+
             <article class="catalog-card" data-categories="weekend nature">
-              <img src="assets/puscha.svg" alt="Гравюрная ілюстрацыя зубра ў Белавежскай пушчы">
-              <div><p class="card-kicker">Брэсцкая вобласць · 2 дні</p><h3>Белавежская пушча</h3><p class="card-description">Веладарожкі пад кронамі векавых дрэў і сустрэча з сімвалам беларускай прыроды.</p><span class="card-meta">36 км на ровары</span></div>
+              <img class="catalog-card__image" src="assets/images/belovezhskaya-pushcha.jpg" alt="Сонечная паляна ў Белавежскай пушчы">
+              <div class="catalog-card__content">
+                <p class="card-kicker">Брэсцкая вобласць · 2 дні</p>
+                <h3>Белавежская пушча</h3>
+                <p class="card-description">Веладарожкі пад кронамі векавых дрэў і сустрэча з сімвалам беларускай прыроды.</p>
+                <div class="card-footer"><span class="card-meta">36 км на ровары</span><span class="card-open-label">Адкрыць ↗</span></div>
+              </div>
+              <button class="catalog-card__trigger" type="button" data-route-id="puscha" aria-label="Адкрыць маршрут Белавежская пушча"></button>
             </article>
+
             <article class="catalog-card" data-categories="weekend nature">
-              <img src="assets/braslav.svg" alt="Гравюрная ілюстрацыя Браслаўскіх азёр">
-              <div><p class="card-kicker">Віцебская вобласць · 2 дні</p><h3>Браслаўскія азёры</h3><p class="card-description">Вада, пагоркі і доўгія вечары на беразе з выглядам на астраўкі.</p><span class="card-meta">42 км на аўто</span></div>
+              <img class="catalog-card__image" src="assets/landmarks/braslav.svg" alt="Ілюстрацыя Браслаўскіх азёр">
+              <div class="catalog-card__content">
+                <p class="card-kicker">Віцебская вобласць · 2 дні</p>
+                <h3>Браслаўскія азёры</h3>
+                <p class="card-description">Вада, пагоркі і доўгія вечары на беразе з выглядам на астраўкі.</p>
+                <div class="card-footer"><span class="card-meta">42 км на аўто</span><span class="card-open-label">Адкрыць ↗</span></div>
+              </div>
+              <button class="catalog-card__trigger" type="button" data-route-id="braslav" aria-label="Адкрыць маршрут Браслаўскія азёры"></button>
             </article>
+
             <article class="catalog-card" data-categories="weekend castles">
-              <img src="assets/lida.svg" alt="Гравюрная ілюстрацыя Лідскага замка">
-              <div><p class="card-kicker">Гродзенская вобласць · 1 дзень</p><h3>Лідскі замак</h3><p class="card-description">Моцныя сцены XIV стагоддзя і невялікае мястэчка, якое зручна абысці пешшу.</p><span class="card-meta">6 км пешшу</span></div>
+              <img class="catalog-card__image" src="assets/landmarks/lida.svg" alt="Ілюстрацыя Лідскага замка" loading="lazy">
+              <div class="catalog-card__content">
+                <p class="card-kicker">Гродзенская вобласць · 1 дзень</p>
+                <h3>Лідскі замак</h3>
+                <p class="card-description">Моцныя сцены XIV стагоддзя і невялікае мястэчка, якое зручна абысці пешшу.</p>
+                <div class="card-footer"><span class="card-meta">6 км пешшу</span><span class="card-open-label">Адкрыць ↗</span></div>
+              </div>
+              <button class="catalog-card__trigger" type="button" data-route-id="lida" aria-label="Адкрыць маршрут Лідскі замак"></button>
             </article>
+
             <article class="catalog-card" data-categories="weekend cities">
-              <img src="assets/brest.svg" alt="Гравюрная ілюстрацыя Брэсцкай крэпасці">
-              <div><p class="card-kicker">Брэсцкая вобласць · 1 дзень</p><h3>Брэсцкая крэпасць</h3><p class="card-description">Мемарыял, набярэжная Мухаўца і вячэрняя прагулка па вуліцы Савецкай.</p><span class="card-meta">7 км пешшу</span></div>
+              <img class="catalog-card__image" src="assets/images/brest-fortress.jpg" alt="Цытадэль Брэсцкай крэпасці" loading="lazy">
+              <div class="catalog-card__content">
+                <p class="card-kicker">Брэсцкая вобласць · 1 дзень</p>
+                <h3>Брэсцкая крэпасць</h3>
+                <p class="card-description">Мемарыял, набярэжная Мухаўца і вячэрняя прагулка па вуліцы Савецкай.</p>
+                <div class="card-footer"><span class="card-meta">7 км пешшу</span><span class="card-open-label">Адкрыць ↗</span></div>
+              </div>
+              <button class="catalog-card__trigger" type="button" data-route-id="brest" aria-label="Адкрыць маршрут Брэсцкая крэпасць"></button>
             </article>
+
             <article class="catalog-card" data-categories="weekend cities">
-              <img src="assets/grodno.svg" alt="Гравюрная ілюстрацыя Гродна">
-              <div><p class="card-kicker">Гродзенская вобласць · выходныя</p><h3>Гродна паміж вежамі</h3><p class="card-description">Старыя храмы, стромкія вуліцы і горад, які добра чытаецца без спешкі.</p><span class="card-meta">11 км пешшу</span></div>
+              <img class="catalog-card__image" src="assets/landmarks/grodno.svg" alt="Ілюстрацыя гістарычнага цэнтра Гродна" loading="lazy">
+              <div class="catalog-card__content">
+                <p class="card-kicker">Гродзенская вобласць · выходныя</p>
+                <h3>Гродна паміж вежамі</h3>
+                <p class="card-description">Старыя храмы, стромкія вуліцы і горад, які добра чытаецца без спешкі.</p>
+                <div class="card-footer"><span class="card-meta">11 км пешшу</span><span class="card-open-label">Адкрыць ↗</span></div>
+              </div>
+              <button class="catalog-card__trigger" type="button" data-route-id="grodno" aria-label="Адкрыць маршрут Гродна паміж вежамі"></button>
             </article>
+
             <article class="catalog-card" data-categories="weekend nature">
-              <img src="assets/pripyat.svg" alt="Гравюрная ілюстрацыя Палесся">
-              <div><p class="card-kicker">Гомельская вобласць · 2 дні</p><h3>Палескія разлівы</h3><p class="card-description">Рака, трыснёг і назіранне за птушкамі ў павольным рытме Палесся.</p><span class="card-meta">28 км на байдарцы</span></div>
+              <img class="catalog-card__image" src="assets/landmarks/pripyat.svg" alt="Ілюстрацыя Палесся" loading="lazy">
+              <div class="catalog-card__content">
+                <p class="card-kicker">Гомельская вобласць · 2 дні</p>
+                <h3>Палескія разлівы</h3>
+                <p class="card-description">Рака, трыснёг і назіранне за птушкамі ў павольным рытме Палесся.</p>
+                <div class="card-footer"><span class="card-meta">28 км на байдарцы</span><span class="card-open-label">Адкрыць ↗</span></div>
+              </div>
+              <button class="catalog-card__trigger" type="button" data-route-id="pripyat" aria-label="Адкрыць маршрут Палескія разлівы"></button>
             </article>
+
             <article class="catalog-card extra-card" data-categories="weekend castles">
-              <img src="assets/zhilichi.svg" alt="Гравюрная ілюстрацыя палаца ў Жылічах">
-              <div><p class="card-kicker">Магілёўская вобласць · 1 дзень</p><h3>Палац у Жылічах</h3><p class="card-description">Класічныя фасады і адноўленыя інтэр’еры сярод старога парку.</p><span class="card-meta">9 км пешшу</span></div>
+              <img class="catalog-card__image" src="assets/landmarks/zhilichi.svg" alt="Ілюстрацыя палаца ў Жылічах" loading="lazy">
+              <div class="catalog-card__content">
+                <p class="card-kicker">Магілёўская вобласць · 1 дзень</p>
+                <h3>Палац у Жылічах</h3>
+                <p class="card-description">Класічныя фасады і адноўленыя інтэр’еры сярод старога парку.</p>
+                <div class="card-footer"><span class="card-meta">9 км пешшу</span><span class="card-open-label">Адкрыць ↗</span></div>
+              </div>
+              <button class="catalog-card__trigger" type="button" data-route-id="zhilichi" aria-label="Адкрыць маршрут Палац у Жылічах"></button>
             </article>
+
             <article class="catalog-card extra-card" data-categories="weekend cities">
-              <img src="assets/vitebsk.svg" alt="Гравюрная ілюстрацыя Віцебска">
-              <div><p class="card-kicker">Віцебская вобласць · выходныя</p><h3>Віцебск над Дзвіной</h3><p class="card-description">Мастацкія майстэрні, старыя дваракі і рака, якая збірае горад разам.</p><span class="card-meta">10 км пешшу</span></div>
+              <img class="catalog-card__image" src="assets/landmarks/vitebsk.svg" alt="Ілюстрацыя Віцебска" loading="lazy">
+              <div class="catalog-card__content">
+                <p class="card-kicker">Віцебская вобласць · выходныя</p>
+                <h3>Віцебск над Дзвіной</h3>
+                <p class="card-description">Мастацкія майстэрні, старыя дваракі і рака, якая збірае горад разам.</p>
+                <div class="card-footer"><span class="card-meta">10 км пешшу</span><span class="card-open-label">Адкрыць ↗</span></div>
+              </div>
+              <button class="catalog-card__trigger" type="button" data-route-id="vitebsk" aria-label="Адкрыць маршрут Віцебск над Дзвіной"></button>
             </article>
           </div>
+
           <div class="load-more-wrap">
             <button class="button button-outline load-more" type="button">Паказаць яшчэ 2 маршруты <span aria-hidden="true">↓</span></button>
           </div>
         </div>
       </section>
     </main>
+
+    <dialog class="route-modal" aria-labelledby="route-modal-title">
+      <button class="route-modal__close" type="button" data-modal-close aria-label="Закрыць маршрут">×</button>
+      <div class="route-modal__grid">
+        <img class="route-modal__image" data-modal-image src="assets/images/mir-castle.jpg" alt="">
+        <div class="route-modal__content">
+          <p class="eyebrow" data-modal-kicker>Маршрут</p>
+          <h2 id="route-modal-title" data-modal-title>Маршрут</h2>
+          <p class="route-modal__intro" data-modal-intro></p>
+          <dl class="route-modal__facts">
+            <div><dt>Тэмп</dt><dd data-modal-duration></dd></div>
+            <div><dt>Адлегласць</dt><dd data-modal-distance></dd></div>
+            <div><dt>Сезон</dt><dd data-modal-season></dd></div>
+          </dl>
+          <ul class="route-modal__highlights" data-modal-highlights></ul>
+          <a class="route-modal__map-link" data-modal-map href="https://www.openstreetmap.org/" target="_blank" rel="noreferrer">Адкрыць на мапе ↗</a>
+        </div>
+      </div>
+    </dialog>
 
     <footer class="site-footer">
       <div class="container footer-grid">
@@ -143,6 +237,6 @@
         <a href="https://rs.school/" target="_blank" rel="noreferrer">RS School</a>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

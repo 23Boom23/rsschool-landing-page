@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Вандроўе — пашпарт адкрыццяў і маршруты па Беларусі.">
-    <meta name="theme-color" content="#412d26">
+    <meta name="theme-color" content="#201714">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Вандроўе — пашпарт адкрыццяў па Беларусі</title>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Да асноўнага зместу</a>
+
     <header class="site-header">
       <div class="container header-content">
         <a class="logo" href="index.html" aria-label="Вандроўе, галоўная старонка">
@@ -44,15 +49,15 @@
       </nav>
     </header>
 
-    <main>
-      <section class="hero belarus-hero" aria-labelledby="hero-title">
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="container hero-content">
           <p class="eyebrow">Пашпарт адкрыццяў · Беларусь</p>
           <h1 id="hero-title">Блізкая Беларусь —<br><em>не проста на мапе.</em></h1>
           <p class="hero-copy">
             Плануй выходныя, збірай уражанні і пакідай сваю адзнаку ў кожнай мясціне, куды прывяла дарога.
           </p>
-          <a class="button button-primary" href="catalog.html" aria-label="Перайсці ў каталог маршрутаў">
+          <a class="button button-primary" href="catalog.html">
             Адкрыць каталог маршрутаў <span aria-hidden="true">↗</span>
           </a>
           <div class="hero-stats">
@@ -61,20 +66,18 @@
             <div><strong>∞</strong><span>адкрыццяў</span></div>
           </div>
         </div>
-        <div class="hero-art passport-art" aria-hidden="true">
-          <div class="sun"></div>
-          <div class="mountain mountain-back"></div>
-          <div class="mountain mountain-front"></div>
-          <div class="passport-seal">Быў<br>бачыў</div>
-          <p>Па<br>Беларусі</p>
-        </div>
+        <figure class="hero-visual">
+          <img class="hero-visual__image" src="assets/images/belovezhskaya-pushcha.jpg" alt="Сонечная паляна ў Белавежскай пушчы">
+          <span class="passport-seal" aria-hidden="true">Быў<br>бачыў</span>
+          <figcaption class="hero-visual__caption">Па<br>Беларусі</figcaption>
+        </figure>
       </section>
 
-      <section class="about section" id="idea" aria-labelledby="idea-title">
-        <div class="container split-layout">
+      <section class="section about" id="idea" aria-labelledby="idea-title">
+        <div class="container split-layout reveal">
           <div>
             <p class="eyebrow">Як гэта працуе</p>
-            <h2 id="idea-title">Дарога становіцца <em>асабістай гісторыяй.</em></h2>
+            <h2 class="section-title" id="idea-title">Дарога становіцца <em>асабістай гісторыяй.</em></h2>
           </div>
           <div class="about-copy">
             <p>
@@ -86,19 +89,19 @@
         </div>
       </section>
 
-      <section class="journeys section soft-surface" id="routes" aria-labelledby="routes-title">
+      <section class="section soft-surface journeys" id="routes" aria-labelledby="routes-title">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading reveal">
             <div>
               <p class="eyebrow">Маршруты месяца</p>
-              <h2 id="routes-title">Выберы свой след</h2>
+              <h2 class="section-title" id="routes-title">Выберы свой след</h2>
             </div>
             <div class="slider-controls" role="group" aria-label="Кіраванне каруселлю">
               <button type="button" aria-label="Папярэдні маршрут">←</button>
               <button type="button" aria-label="Наступны маршрут">→</button>
             </div>
           </div>
-          <div class="journey-track">
+          <div class="journey-track reveal">
             <article class="journey-card card-mir">
               <div class="card-content">
                 <p>Мінская вобласць · 1 дзень</p>
@@ -124,10 +127,15 @@
         </div>
       </section>
 
-      <section class="principles section" aria-labelledby="principles-title">
-        <div class="container">
-          <p class="eyebrow">Твой пашпарт</p>
-          <h2 id="principles-title">Тры простыя крокі<br><em>да сваёй Беларусі.</em></h2>
+      <section class="section principles" aria-labelledby="principles-title">
+        <div class="container reveal">
+          <div class="principles__top">
+            <div>
+              <p class="eyebrow">Твой пашпарт</p>
+              <h2 class="section-title" id="principles-title">Тры простыя крокі<br><em>да сваёй Беларусі.</em></h2>
+            </div>
+            <span class="principles__stamp" aria-hidden="true">Павольна<br>і ўважліва</span>
+          </div>
           <div class="principle-grid">
             <article>
               <span>01</span>
@@ -148,12 +156,12 @@
         </div>
       </section>
 
-      <section class="journal section" id="notes" aria-labelledby="notes-title">
-        <div class="container journal-layout">
-          <div class="journal-photo" role="img" aria-label="Графічная ілюстрацыя Браслаўскіх азёр"></div>
+      <section class="section journal" id="notes" aria-labelledby="notes-title">
+        <div class="container journal-layout reveal">
+          <div class="journal-photo" role="img" aria-label="Нясвіжскі замак на захадзе сонца"></div>
           <div>
             <p class="eyebrow">Нататкі вандроўніка</p>
-            <h2 id="notes-title">«Найлепшыя месцы не трэба шукаць далёка».</h2>
+            <h2 class="section-title" id="notes-title">«Найлепшыя месцы не трэба шукаць далёка».</h2>
             <p>Раз на месяц дасылаем ідэі для невялікіх паездак, адрасы лакальных кавярняў і гісторыі з дарогі.</p>
             <a class="button button-outline" href="mailto:hello@vandrove.example">Атрымаць ліст</a>
           </div>
@@ -188,6 +196,6 @@
         <a href="https://rs.school/" target="_blank" rel="noreferrer">RS School</a>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
