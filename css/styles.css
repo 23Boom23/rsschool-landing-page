@@ -461,6 +461,12 @@ body.modal-is-open {
     display: grid;
     grid-template-columns: 42% 58%;
   }
+  .extra-card:not(.visible) {
+    display: none;
+  }
+  .extra-card.visible {
+    display: grid;
+  }
   .catalog-card__image {
     min-height: 196px;
     height: 100%;
