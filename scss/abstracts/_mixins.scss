@@ -1,7 +1,7 @@
 @use 'tokens' as *;
 
 @mixin container {
-  width: min(1180px, calc(100% - 64px));
+  width: min($page-max-width, calc(100% - 64px));
   margin-inline: auto;
 }
 

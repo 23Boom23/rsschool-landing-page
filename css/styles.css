@@ -90,7 +90,7 @@ body.modal-is-open {
 }
 
 .container {
-  width: min(1180px, 100% - 64px);
+  width: min(1440px, 100% - 64px);
   margin-inline: auto;
 }
 
