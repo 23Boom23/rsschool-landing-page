@@ -14,12 +14,13 @@ setTheme(localStorage.getItem(STORAGE_KEY) || 'light');
 toggle?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
 
 document.querySelectorAll('.category-tabs button').forEach((tab) => tab.addEventListener('click', () => {
-  document.querySelectorAll('.category-tabs button').forEach((item) => { item.classList.remove('active'); item.setAttribute('aria-selected', 'false'); });
+  document.querySelectorAll('.category-tabs button').forEach((item) => { item.classList.remove('active'); item.setAttribute('aria-pressed', 'false'); });
   tab.classList.add('active');
-  tab.setAttribute('aria-selected', 'true');
+  tab.setAttribute('aria-pressed', 'true');
   const category = tab.dataset.category;
   document.querySelectorAll('.catalog-card').forEach((card) => {
-    card.classList.toggle('is-filtered-out', category !== 'all' && card.dataset.category !== category);
+    const matchesCategory = card.dataset.categories?.split(' ').includes(category);
+    card.classList.toggle('is-filtered-out', category !== 'all' && !matchesCategory);
   });
 }));
 
@@ -27,3 +28,20 @@ document.querySelector('.load-more')?.addEventListener('click', (event) => {
   document.querySelectorAll('.extra-card').forEach((card) => card.classList.add('visible'));
   event.currentTarget.remove();
 });
+
+const menuButton = document.querySelector('.menu-button');
+const mobileNav = document.querySelector('.mobile-nav');
+
+function closeMobileMenu() {
+  document.body.classList.remove('menu-is-open');
+  menuButton?.setAttribute('aria-expanded', 'false');
+  menuButton?.setAttribute('aria-label', 'Адкрыць меню');
+}
+
+menuButton?.addEventListener('click', () => {
+  const isOpen = document.body.classList.toggle('menu-is-open');
+  menuButton.setAttribute('aria-expanded', String(isOpen));
+  menuButton.setAttribute('aria-label', isOpen ? 'Закрыць меню' : 'Адкрыць меню');
+});
+
+mobileNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileMenu));
