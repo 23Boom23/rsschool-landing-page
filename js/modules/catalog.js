@@ -1,4 +1,4 @@
-import { routes } from '../data/routes.js';
+import { routes } from '../data/routes.js?v=part2';
 
 function createCard(route) {
   const card = document.createElement('article');

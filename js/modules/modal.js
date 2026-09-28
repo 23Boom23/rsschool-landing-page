@@ -1,4 +1,4 @@
-import { routes } from '../data/routes.js';
+import { routes } from '../data/routes.js?v=part2';
 
 export function initRouteModal() {
   const dialog = document.querySelector('.route-modal');
