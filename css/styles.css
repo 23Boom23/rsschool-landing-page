@@ -858,6 +858,7 @@ body.menu-is-open {
 }
 
 .hero-visual__image {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -919,29 +920,33 @@ body.menu-is-open {
 }
 @media (max-width: 768px) {
   .hero {
-    min-height: 720px;
+    min-height: 0;
   }
   .hero-content {
     padding-top: 78px;
-    padding-bottom: 260px;
+    padding-bottom: 38px;
   }
   .hero-visual {
-    top: auto;
+    position: relative;
+    inset: auto;
     width: 100%;
-    height: 300px;
+    height: auto;
   }
   .hero-visual::after {
-    background: linear-gradient(0deg, rgba(25, 55, 46, 0.58), transparent);
+    background: linear-gradient(0deg, rgba(25, 55, 46, 0.48), transparent 48%);
+  }
+  .hero-visual__image {
+    height: auto;
+    animation: none;
+    transform: none;
   }
   .hero h1 {
     max-width: 620px;
     font-size: 58px;
   }
   .hero-stats {
-    position: absolute;
-    bottom: 36px;
-    z-index: 1;
-    margin-top: 0;
+    position: static;
+    margin-top: 48px;
   }
   .passport-seal {
     top: 14%;
@@ -952,9 +957,6 @@ body.menu-is-open {
   }
 }
 @media (max-width: 500px) {
-  .hero {
-    min-height: 700px;
-  }
   .hero-content {
     padding-top: 58px;
   }
@@ -974,30 +976,12 @@ body.menu-is-open {
   .hero-stats span {
     font-size: 10px;
   }
-  .hero-visual {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16/10;
-  }
-  .hero-visual::after {
-    background: linear-gradient(90deg, var(--paper) 0%, transparent 22%), linear-gradient(0deg, rgba(25, 55, 46, 0.55), transparent 65%);
-  }
-  .hero {
-    min-height: 0;
-  }
-  .hero-content {
-    padding-bottom: 38px;
-  }
-  .hero-stats {
-    position: static;
-    margin-top: 48px;
-  }
-  .hero-visual__image {
-    object-fit: contain;
-    animation: none;
-    transform: none;
+  .passport-seal {
+    top: 9%;
+    left: 6%;
+    width: 82px;
+    height: 82px;
+    font-size: 12px;
   }
   .hero-visual__caption {
     right: 7%;
@@ -1080,8 +1064,6 @@ body.menu-is-open {
   flex: 0 0 100%;
   min-height: 456px;
   overflow: hidden;
-  background-position: center;
-  background-size: cover;
   box-shadow: var(--shadow);
   color: var(--white);
   transition: transform 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease, color 0.24s ease;
@@ -1096,16 +1078,12 @@ body.menu-is-open {
   content: "";
 }
 
-.card-mir {
-  background-image: url("../assets/images/mir-castle.jpg");
-}
-
-.card-puscha {
-  background-image: url("../assets/images/belovezhskaya-pushcha.jpg");
-}
-
-.card-braslav {
-  background-image: url("../assets/images/braslav-lakes.jpg");
+.journey-card__image {
+  display: block;
+  width: 100%;
+  height: 456px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card-content {
@@ -1255,6 +1233,9 @@ body.menu-is-open {
   .journey-card {
     min-height: 400px;
   }
+  .journey-card__image {
+    height: 400px;
+  }
   .journal-layout {
     gap: 46px;
   }
@@ -1284,6 +1265,9 @@ body.menu-is-open {
   }
   .journey-card {
     min-height: 370px;
+  }
+  .journey-card__image {
+    height: 370px;
   }
   .card-content {
     right: 20px;

@@ -80,8 +80,6 @@
   flex: 0 0 100%;
   min-height: 456px;
   overflow: hidden;
-  background-position: center;
-  background-size: cover;
   box-shadow: var(--shadow);
   color: var(--white);
 
@@ -95,16 +93,12 @@
   }
 }
 
-.card-mir {
-  background-image: url('../assets/images/mir-castle.jpg');
-}
-
-.card-puscha {
-  background-image: url('../assets/images/belovezhskaya-pushcha.jpg');
-}
-
-.card-braslav {
-  background-image: url('../assets/images/braslav-lakes.jpg');
+.journey-card__image {
+  display: block;
+  width: 100%;
+  height: 456px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card-content {
@@ -272,6 +266,10 @@
     min-height: 400px;
   }
 
+  .journey-card__image {
+    height: 400px;
+  }
+
   .journal-layout {
     gap: 46px;
   }
@@ -308,6 +306,10 @@
 
   .journey-card {
     min-height: 370px;
+  }
+
+  .journey-card__image {
+    height: 370px;
   }
 
   .card-content {
