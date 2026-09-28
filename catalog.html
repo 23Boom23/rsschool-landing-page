@@ -84,24 +84,37 @@
     <dialog class="route-modal" aria-labelledby="route-modal-title">
       <button class="route-modal__close" type="button" data-modal-close aria-label="Закрыць маршрут">×</button>
       <div class="route-modal__grid">
-        <img class="route-modal__image" data-modal-image src="assets/images/mir-castle.jpg" alt="">
+        <div class="route-modal__media">
+          <img class="route-modal__image" data-modal-image src="assets/images/mir-castle.jpg" alt="">
+          <div class="route-modal__map-wrap">
+            <iframe class="route-modal__map" data-modal-map-frame title="Карта маршруту" src="about:blank" loading="lazy"></iframe>
+          </div>
+        </div>
         <div class="route-modal__content">
           <p class="eyebrow" data-modal-kicker>Маршрут</p>
           <h2 id="route-modal-title" data-modal-title>Маршрут</h2>
           <p class="route-modal__intro" data-modal-intro></p>
           <dl class="route-modal__facts">
-            <div><dt>Тэмп</dt><dd data-modal-duration></dd></div>
+            <div><dt>Час</dt><dd data-modal-duration></dd></div>
             <div><dt>Адлегласць</dt><dd data-modal-distance></dd></div>
             <div><dt>Сезон</dt><dd data-modal-season></dd></div>
           </dl>
+          <div class="route-modal__options">
+            <fieldset>
+              <legend>Тэмп падарожжа</legend>
+              <div class="route-modal__choices" data-modal-pace></div>
+            </fieldset>
+            <fieldset>
+              <legend>Галоўны прыпынак</legend>
+              <div class="route-modal__choices" data-modal-stops></div>
+            </fieldset>
+          </div>
+          <p class="route-modal__selection" data-modal-selection aria-live="polite"></p>
           <ul class="route-modal__highlights" data-modal-highlights></ul>
           <section class="route-modal__places" aria-labelledby="route-modal-places-title">
             <h3 id="route-modal-places-title">Добрыя прыпынкі</h3>
             <ul data-modal-places></ul>
           </section>
-          <div class="route-modal__map-wrap">
-            <iframe class="route-modal__map" data-modal-map-frame title="Карта маршруту" src="about:blank" loading="lazy"></iframe>
-          </div>
           <div class="route-modal__map-actions">
             <a class="route-modal__map-link" data-modal-map href="https://www.google.com/maps/" target="_blank" rel="noreferrer">Адкрыць мапу ↗</a>
             <a class="route-modal__route-link" data-modal-route href="https://www.google.com/maps/dir/?api=1" target="_blank" rel="noreferrer">Пабудаваць маршрут ↗</a>
