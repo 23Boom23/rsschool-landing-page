@@ -12,7 +12,8 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-body.modal-is-open {
+body.modal-is-open,
+body.menu-is-open {
   overflow: hidden;
 }
 

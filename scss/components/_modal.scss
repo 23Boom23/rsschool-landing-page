@@ -280,15 +280,26 @@
 
 @media (max-width: $tablet) {
   .route-modal__grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 
   .route-modal__media {
-    grid-template-rows: 220px 140px;
+    display: contents;
   }
 
   .route-modal__image {
-    max-height: 220px;
+    order: 0;
+    height: 220px;
+  }
+
+  .route-modal__content {
+    order: 1;
+  }
+
+  .route-modal__map-wrap {
+    order: 2;
+    height: 150px;
   }
 }
 
@@ -299,11 +310,7 @@
   }
 
   .route-modal__image {
-    max-height: 190px;
-  }
-
-  .route-modal__media {
-    grid-template-rows: 190px 130px;
+    height: 190px;
   }
 
   .route-modal__content {
@@ -311,6 +318,14 @@
   }
 
   .route-modal__facts {
-    grid-template-columns: 1fr;
+    gap: 8px;
+
+    dd {
+      font-size: 11px;
+    }
+  }
+
+  .route-modal__map-wrap {
+    height: 130px;
   }
 }

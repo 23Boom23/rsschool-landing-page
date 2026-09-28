@@ -116,11 +116,6 @@
   display: none;
 }
 
-body.menu-is-open,
-body.modal-is-open {
-  overflow: hidden;
-}
-
 @media (max-width: $tablet) {
   .header-content {
     min-height: 72px;

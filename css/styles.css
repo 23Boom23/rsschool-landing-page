@@ -85,7 +85,8 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-body.modal-is-open {
+body.modal-is-open,
+body.menu-is-open {
   overflow: hidden;
 }
 
@@ -306,11 +307,6 @@ body.modal-is-open {
 
 .mobile-nav {
   display: none;
-}
-
-body.menu-is-open,
-body.modal-is-open {
-  overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -745,13 +741,22 @@ body.modal-is-open {
 }
 @media (max-width: 768px) {
   .route-modal__grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
   .route-modal__media {
-    grid-template-rows: 220px 140px;
+    display: contents;
   }
   .route-modal__image {
-    max-height: 220px;
+    order: 0;
+    height: 220px;
+  }
+  .route-modal__content {
+    order: 1;
+  }
+  .route-modal__map-wrap {
+    order: 2;
+    height: 150px;
   }
 }
 @media (max-width: 500px) {
@@ -760,16 +765,19 @@ body.modal-is-open {
     max-height: calc(100dvh - 20px);
   }
   .route-modal__image {
-    max-height: 190px;
-  }
-  .route-modal__media {
-    grid-template-rows: 190px 130px;
+    height: 190px;
   }
   .route-modal__content {
     padding: 30px 24px 28px;
   }
   .route-modal__facts {
-    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .route-modal__facts dd {
+    font-size: 11px;
+  }
+  .route-modal__map-wrap {
+    height: 130px;
   }
 }
 .hero {
@@ -1097,7 +1105,7 @@ body.modal-is-open {
 }
 
 .card-braslav {
-  background-image: url("../assets/landmarks/braslav.svg");
+  background-image: url("../assets/images/braslav-lakes.jpg");
 }
 
 .card-content {
