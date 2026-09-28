@@ -59,7 +59,7 @@
   }
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $tablet) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 26px 20px;

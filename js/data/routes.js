@@ -1,5 +1,20 @@
-export const routes = {
-  mir: {
+function withOptions(route) {
+  return {
+    ...route,
+    options: {
+      pace: [
+        { id: 'calm', label: 'Павольна', summary: `Павольны рытм · ${route.duration}`, highlights: route.highlights.slice(0, 2) },
+        { id: 'active', label: 'Насычана', summary: `Насычаны рытм · ${route.duration}`, highlights: route.highlights },
+      ],
+      stops: route.places.map((place, index) => ({ id: String(index), label: place.name, place })),
+    },
+  };
+}
+
+export const routes = [
+  withOptions({
+    id: 'mir',
+    categories: ['weekend', 'castles'],
     kicker: 'Мінская вобласць · 1 дзень',
     title: 'Мірскі замак',
     intro: 'Маршрут для першага знаёмства з беларускімі замкамі: вежы, вадзяны роў і павольная прагулка па мястэчку.',
@@ -15,8 +30,10 @@ export const routes = {
       { name: 'Сажалка', type: 'від', query: 'Mir Castle pond, Belarus' },
       { name: 'Касцёл Св. Мікалая', type: 'архітэктура', query: 'St Nicholas Church, Mir, Belarus' },
     ],
-  },
-  nesvizh: {
+  }),
+  withOptions({
+    id: 'nesvizh',
+    categories: ['weekend', 'castles'],
     kicker: 'Мінская вобласць · 1 дзень',
     title: 'Нясвіж і парк Радзівілаў',
     intro: 'Адзін дзень, каб злучыць палац, парк і вуліцы старога Нясвіжа ў неспешную гісторыю.',
@@ -32,8 +49,10 @@ export const routes = {
       { name: 'Ратуша', type: 'гісторыя', query: 'Nesvizh Town Hall, Belarus' },
       { name: 'Фарны касцёл', type: 'архітэктура', query: 'Corpus Christi Church, Nesvizh, Belarus' },
     ],
-  },
-  puscha: {
+  }),
+  withOptions({
+    id: 'puscha',
+    categories: ['weekend', 'nature'],
     kicker: 'Брэсцкая вобласць · 2 дні',
     title: 'Белавежская пушча',
     intro: 'Два дні для велапаездак пад кронамі лесу і назірання за прыродай без гарадской спешкі.',
@@ -49,8 +68,10 @@ export const routes = {
       { name: 'Музей прыроды', type: 'музей', query: 'Museum of Nature Belovezhskaya Pushcha, Belarus' },
       { name: 'Вольеры', type: 'прырода', query: 'Belovezhskaya Pushcha enclosures, Belarus' },
     ],
-  },
-  braslav: {
+  }),
+  withOptions({
+    id: 'braslav',
+    categories: ['weekend', 'nature'],
     kicker: 'Віцебская вобласць · 2 дні',
     title: 'Браслаўскія азёры',
     intro: 'Вада, пагоркі і ранішні туман: маршрут для тых, каму хочацца пакінуць гарадскі рытм ззаду.',
@@ -66,8 +87,10 @@ export const routes = {
       { name: 'Возера Дрывяты', type: 'возера', query: 'Lake Drivyaty, Braslav, Belarus' },
       { name: 'Слабодка', type: 'вёска', query: 'Slobodka, Braslav, Belarus' },
     ],
-  },
-  lida: {
+  }),
+  withOptions({
+    id: 'lida',
+    categories: ['weekend', 'castles'],
     kicker: 'Гродзенская вобласць · 1 дзень',
     title: 'Лідскі замак',
     intro: 'Кароткая вандроўка да моцных сцен XIV стагоддзя і ціхіх вуліц невялікага беларускага горада.',
@@ -83,8 +106,10 @@ export const routes = {
       { name: 'Кафедральны сабор', type: 'архітэктура', query: 'St Michael Cathedral, Lida, Belarus' },
       { name: 'Цэнтр Ліды', type: 'прагулка', query: 'Lida city centre, Belarus' },
     ],
-  },
-  brest: {
+  }),
+  withOptions({
+    id: 'brest',
+    categories: ['weekend', 'cities'],
     kicker: 'Брэсцкая вобласць · 1 дзень',
     title: 'Брэсцкая крэпасць',
     intro: 'Мемарыяльны маршрут, які працягваецца на набярэжнай Мухаўца і заканчваецца ў вячэрнім Брэсце.',
@@ -100,8 +125,10 @@ export const routes = {
       { name: 'Холмскія вароты', type: 'гісторыя', query: 'Kholm Gate Brest Fortress, Belarus' },
       { name: 'Савецкая вуліца', type: 'вечар', query: 'Sovetskaya Street, Brest, Belarus' },
     ],
-  },
-  grodno: {
+  }),
+  withOptions({
+    id: 'grodno',
+    categories: ['weekend', 'cities'],
     kicker: 'Гродзенская вобласць · выходныя',
     title: 'Гродна паміж вежамі',
     intro: 'Пешаходны маршрут па горадзе, дзе на адной вуліцы сустракаюцца розныя эпохі і культуры.',
@@ -117,8 +144,10 @@ export const routes = {
       { name: 'Фарны касцёл', type: 'архітэктура', query: 'Farny Church, Grodno, Belarus' },
       { name: 'Нёман', type: 'набярэжная', query: 'Neman River embankment, Grodno, Belarus' },
     ],
-  },
-  pripyat: {
+  }),
+  withOptions({
+    id: 'pripyat',
+    categories: ['weekend', 'nature'],
     kicker: 'Гомельская вобласць · 2 дні',
     title: 'Палескія разлівы',
     intro: 'Маршрут па вадаёмах Палесся для аматараў птушак, байдарак і адкрытага гарызонту.',
@@ -134,8 +163,10 @@ export const routes = {
       { name: 'Замкавая гара', type: 'від', query: 'Castle Hill, Mazyr, Belarus' },
       { name: 'Нацпарк Прыпяцкі', type: 'прырода', query: 'Pripyat National Park, Belarus' },
     ],
-  },
-  zhilichi: {
+  }),
+  withOptions({
+    id: 'zhilichi',
+    categories: ['weekend', 'castles'],
     kicker: 'Магілёўская вобласць · 1 дзень',
     title: 'Палац у Жылічах',
     intro: 'Светлы класічны палац і парк — выразны аднадзённы маршрут у бок усходняй Беларусі.',
@@ -151,8 +182,10 @@ export const routes = {
       { name: 'Палацавы парк', type: 'парк', query: 'Zhilichi Palace park, Belarus' },
       { name: 'Кіраўск', type: 'горад', query: 'Kirovsk, Mogilev Region, Belarus' },
     ],
-  },
-  vitebsk: {
+  }),
+  withOptions({
+    id: 'vitebsk',
+    categories: ['weekend', 'cities'],
     kicker: 'Віцебская вобласць · выходныя',
     title: 'Віцебск над Дзвіной',
     intro: 'Мастацкі горад з майстэрнямі, дварамі і ракой: сюды добра прыязджаць на павольныя выходныя.',
@@ -168,5 +201,5 @@ export const routes = {
       { name: 'Дом-музей Шагала', type: 'мастацтва', query: 'Marc Chagall House Museum, Vitebsk, Belarus' },
       { name: 'Успенскі сабор', type: 'архітэктура', query: 'Assumption Cathedral, Vitebsk, Belarus' },
     ],
-  },
-};
+  }),
+];

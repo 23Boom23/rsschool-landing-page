@@ -131,15 +131,27 @@
 
   .mobile-nav {
     display: block;
-    max-height: 0;
-    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: calc(100dvh - 72px);
+    overflow-y: auto;
     background: var(--paper);
-    transition: max-height 0.3s ease;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-14px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   }
 
   .menu-is-open .mobile-nav {
-    max-height: 290px;
     border-top: 1px solid var(--line);
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
   }
 
   .mobile-nav ul {
