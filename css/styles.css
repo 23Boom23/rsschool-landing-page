@@ -1511,7 +1511,7 @@ body.menu-is-open {
   color: var(--sun);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 26px 20px;
