@@ -3,9 +3,11 @@ import { initRouteModal } from './modules/modal.js';
 import { initMobileMenu } from './modules/mobile-menu.js';
 import { initRevealAnimations } from './modules/reveal.js';
 import { initTheme } from './modules/theme.js';
+import { initSlider } from './modules/slider.js';
 
 initTheme();
 initMobileMenu();
 initCatalogControls();
 initRouteModal();
 initRevealAnimations();
+initSlider();

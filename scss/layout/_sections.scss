@@ -66,14 +66,18 @@
   }
 }
 
+.journey-viewport {
+  overflow: hidden;
+}
+
 .journey-track {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .journey-card {
   position: relative;
+  flex: 0 0 100%;
   min-height: 456px;
   overflow: hidden;
   background-position: center;
@@ -264,11 +268,6 @@
     padding-top: 0;
   }
 
-  .journey-track {
-    grid-template-columns: repeat(3, 70%);
-    overflow: hidden;
-  }
-
   .journey-card {
     min-height: 400px;
   }
@@ -305,11 +304,6 @@
   .slider-controls button {
     width: 38px;
     height: 38px;
-  }
-
-  .journey-track {
-    grid-template-columns: repeat(3, 90%);
-    gap: 14px;
   }
 
   .journey-card {
@@ -362,5 +356,11 @@
 
   .journal-photo {
     min-height: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-track {
+    transition: none;
   }
 }

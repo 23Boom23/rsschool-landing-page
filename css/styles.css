@@ -999,14 +999,18 @@ body.modal-is-open {
   color: var(--paper);
 }
 
+.journey-viewport {
+  overflow: hidden;
+}
+
 .journey-track {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .journey-card {
   position: relative;
+  flex: 0 0 100%;
   min-height: 456px;
   overflow: hidden;
   background-position: center;
@@ -1181,10 +1185,6 @@ body.modal-is-open {
     max-width: 550px;
     padding-top: 0;
   }
-  .journey-track {
-    grid-template-columns: repeat(3, 70%);
-    overflow: hidden;
-  }
   .journey-card {
     min-height: 400px;
   }
@@ -1214,10 +1214,6 @@ body.modal-is-open {
   .slider-controls button {
     width: 38px;
     height: 38px;
-  }
-  .journey-track {
-    grid-template-columns: repeat(3, 90%);
-    gap: 14px;
   }
   .journey-card {
     min-height: 370px;
@@ -1259,6 +1255,11 @@ body.modal-is-open {
   }
   .journal-photo {
     min-height: 280px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey-track {
+    transition: none;
   }
 }
 .catalog-hero {

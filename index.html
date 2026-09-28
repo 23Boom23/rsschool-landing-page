@@ -97,11 +97,12 @@
               <h2 class="section-title" id="routes-title">Выберы свой след</h2>
             </div>
             <div class="slider-controls" role="group" aria-label="Кіраванне каруселлю">
-              <button type="button" aria-label="Папярэдні маршрут">←</button>
-              <button type="button" aria-label="Наступны маршрут">→</button>
+              <button type="button" data-slide-prev aria-label="Папярэдні маршрут">←</button>
+              <button type="button" data-slide-next aria-label="Наступны маршрут">→</button>
             </div>
           </div>
-          <div class="journey-track reveal">
+          <div class="journey-viewport reveal" aria-roledescription="карусель" aria-label="Маршруты месяца">
+            <div class="journey-track">
             <article class="journey-card card-mir">
               <div class="card-content">
                 <p>Мінская вобласць · 1 дзень</p>
@@ -123,6 +124,7 @@
                 <a href="catalog.html">Глядзець каталог <span aria-hidden="true">↗</span></a>
               </div>
             </article>
+            </div>
           </div>
         </div>
       </section>
