@@ -89,30 +89,10 @@
   }
 }
 
-.extra-card {
-  display: none;
-}
-
-.extra-card.visible {
-  display: block;
-}
-
-.catalog-card.is-filtered-out {
-  display: none;
-}
-
 @media (max-width: $mobile) {
   .catalog-card {
     display: grid;
     grid-template-columns: 42% 58%;
-  }
-
-  .extra-card:not(.visible) {
-    display: none;
-  }
-
-  .extra-card.visible {
-    display: grid;
   }
 
   .catalog-card__image {

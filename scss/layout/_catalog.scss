@@ -97,6 +97,10 @@
   text-align: center;
 }
 
+.load-more[hidden] {
+  display: none;
+}
+
 @media (max-width: $desktop) {
   .catalog-grid {
     grid-template-columns: repeat(3, 1fr);

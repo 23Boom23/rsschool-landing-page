@@ -444,28 +444,10 @@ body.modal-is-open {
   outline-offset: -3px;
 }
 
-.extra-card {
-  display: none;
-}
-
-.extra-card.visible {
-  display: block;
-}
-
-.catalog-card.is-filtered-out {
-  display: none;
-}
-
 @media (max-width: 500px) {
   .catalog-card {
     display: grid;
     grid-template-columns: 42% 58%;
-  }
-  .extra-card:not(.visible) {
-    display: none;
-  }
-  .extra-card.visible {
-    display: grid;
   }
   .catalog-card__image {
     min-height: 196px;
@@ -1345,6 +1327,10 @@ body.modal-is-open {
 .load-more-wrap {
   padding-top: 48px;
   text-align: center;
+}
+
+.load-more[hidden] {
+  display: none;
 }
 
 @media (max-width: 900px) {
